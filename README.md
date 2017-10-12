@@ -51,3 +51,4 @@ Please complete the [backend screening](https://github.com/appirio-digital/ads-s
 * Unit Tests and a test runner of your choice included
 * Application deployed to Heroku
 * Use of Redux for state management
+* Use of CSS preprocessors (PostCSS or SASS) or CSS in JS
