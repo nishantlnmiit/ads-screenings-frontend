@@ -6,6 +6,7 @@ import {removeCookie} from '../common';
 
 
 
+
 class Dashboard extends Component {
 
   constructor(props) {
@@ -19,6 +20,7 @@ class Dashboard extends Component {
   	localStorage.removeItem("refreshToken");
   	removeCookie();
   	this.props.history.push("/login");
+   
   }
 
   render(){

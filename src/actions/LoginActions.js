@@ -1,14 +1,14 @@
 import {SET_LOGIN_PENDING,SET_LOGIN_SUCCESS,SET_LOGIN_ERROR}  from './actionTypes';
 import axios from 'axios';
+import querystring from 'querystring';
 import {GLOBAL_API_URL ,API_ROUTES} from '../globalConfig';
 import {setCookie ,getCookie} from '../common';
 
 export const  login  = (email, password) => {
   return dispatch => {
-    // dispatch(setLoginPending(true));
-    // dispatch(setLoginSuccess(false));
-    // dispatch(setLoginError(null));
-
+    dispatch(setLoginPending(true));
+    dispatch(setLoginSuccess(false));
+    dispatch(setLoginError(null));
     callLoginApi(email, password, error => {
       dispatch(setLoginPending(false));
       if (!error) {
@@ -21,7 +21,7 @@ export const  login  = (email, password) => {
 }
  
 
-const setLoginPending = (isLoginPending) => {
+export const setLoginPending = (isLoginPending) => {
    return {
     type: SET_LOGIN_PENDING,
     isLoginPending,
@@ -29,14 +29,14 @@ const setLoginPending = (isLoginPending) => {
 }
 
 
-const setLoginSuccess = (isLoginSuccess) => {
+export const setLoginSuccess = (isLoginSuccess) => {
    return {
     type: SET_LOGIN_SUCCESS,
     isLoginSuccess,
   }
 }
 
-const setLoginError = (loginError) => {
+export const setLoginError = (loginError) => {
    return {
     type: SET_LOGIN_ERROR,
     loginError,
@@ -44,14 +44,19 @@ const setLoginError = (loginError) => {
 }
 
 function callLoginApi(email, password, callback) {
-
+      var data = {
+         email: email,
+          password: password
+      }
       axios({
         method: 'post',
         url: GLOBAL_API_URL+API_ROUTES.LOGIN ,
-        data: {
-          email: email,
-          password: password
-        }
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded'
+
+      },
+        data: querystring.stringify(data)
+          
       }).then(response => {
           const data = response.data;
           console.log(data);
@@ -67,7 +72,8 @@ function callLoginApi(email, password, callback) {
          return callback(null);
 
     }).catch(error => {
-        return callback(new Error('Invalid email and password'));
+        console.log(error);
+        return callback(new Error(error.message));
      });
 
      

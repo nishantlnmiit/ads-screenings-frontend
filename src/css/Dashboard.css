@@ -1,4 +1,19 @@
+.logout {
+    width: 84px;
+    background-color: blueviolet;
+    border: aliceblue;
+    font-size: 21px;
+    height: 31px;
+    border: 3px solid;
+    border-radius: 13px;
+    border-color: blueviolet;
+ 	outline: none;
+ 	margin-top: -303px;
+	float: right;
+}
 .flexContent {
     margin-top: 304px;
     margin-left: 595px;
+    font-size: 50px;
+    color: blueviolet;
 }

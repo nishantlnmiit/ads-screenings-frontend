@@ -34,12 +34,12 @@ componentWillReceiveProps(nextProps){
         <div className="form-group-main">
           <div className="form-group">
             <label>Email:</label>
-            <input type="email" name="email" onChange={e => this.setState({email: e.target.value})} value={email}/>
+            <input type="email" name="email" onChange={e => this.setState({email: e.target.value})} value={email} required/>
           </div>
 
           <div className="form-group">
             <label>Password:</label>
-            <input type="password" name="password" onChange={e => this.setState({password: e.target.value})} value={password}/>
+            <input type="password" name="password" onChange={e => this.setState({password: e.target.value})} value={password} required/>
           </div>
 
           <input type="submit" value="Login" />
@@ -49,7 +49,6 @@ componentWillReceiveProps(nextProps){
         
         <div className="message">
           { isLoginPending && <div>Please wait...</div> }
-          { isLoginSuccess && <div>Success.</div> }
           { loginError && <div>{loginError.message}</div> }
         </div>
         

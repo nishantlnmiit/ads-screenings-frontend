@@ -9,7 +9,8 @@ const LoginReducer =  (state = {
   switch (action.type) {
     case  SET_LOGIN_PENDING:
       return Object.assign({}, state, {
-        isLoginPending: action.isLoginPending
+        isLoginPending: action.isLoginPending,
+        shouldRedirect : false
       });
 
     case  SET_LOGIN_SUCCESS:
@@ -20,7 +21,8 @@ const LoginReducer =  (state = {
 
     case  SET_LOGIN_ERROR:
       return Object.assign({}, state, {
-        loginError: action.loginError
+        loginError: action.loginError,
+        shouldRedirect : false
       });
 
     default:
