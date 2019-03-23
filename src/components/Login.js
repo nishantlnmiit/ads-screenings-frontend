@@ -1,21 +1,37 @@
+/**
+ **  All the imports are here.
+ **/
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import {login} from '../actions/LoginActions';
 import {withRouter} from 'react-router-dom';
 import '../css/Login.css';
 
+/**
+ **  clas definition for Login component
+ **/
 class Login extends Component {
-
+  /**
+  **  Constructor calling on page load.
+  **/
   constructor(props) {
     super(props);
+    /**
+    **  State definition.
+    **/
     this.state = {
       shouldRedirect : false
     };
+    /**
+    **  methods binded here.
+    **/
     this.onSubmit = this.onSubmit.bind(this);
   }
 
 
- 
+/**
+  **  React life cycle method to capture prop change.
+  **/
 componentWillReceiveProps(nextProps){
   console.log(nextProps);
   if(nextProps.shouldRedirect !== this.props.shouldRedirect){
@@ -24,10 +40,12 @@ componentWillReceiveProps(nextProps){
   }
 
 }
-
+ /**
+  **  Html is written inside render method.
+  **/
   render() {
     let {email, password} = this.state;
-    let {isLoginPending, isLoginSuccess, loginError} = this.props;
+    let {isLoginPending, loginError} = this.props;
       
     return (
       <form name="login" onSubmit={this.onSubmit}>
@@ -58,6 +76,9 @@ componentWillReceiveProps(nextProps){
     )
   }
 
+ /**
+  **  method is called on click of submit button.
+  **/
   onSubmit(e) {
     e.preventDefault();
     let { email, password } = this.state;

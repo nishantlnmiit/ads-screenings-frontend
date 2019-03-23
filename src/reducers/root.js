@@ -3,7 +3,7 @@ import LoginReducer from './LoginReducer';
  
  
 /**
- * Combine Reducers In One Object
+ * Combine Reducers in One Object
  */
 export default combineReducers({
   LoginReducer:LoginReducer

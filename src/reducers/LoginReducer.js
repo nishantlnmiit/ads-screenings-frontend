@@ -1,28 +1,38 @@
-import { SET_LOGIN_PENDING,SET_LOGIN_SUCCESS,SET_LOGIN_ERROR}  from '../actions/actionTypes';
+/**
+ **  All the imports are here.
+ **/
+import {
+  SET_LOGIN_PENDING,
+  SET_LOGIN_SUCCESS,
+  SET_LOGIN_ERROR
+} from '../actions/actionTypes';
 
-const LoginReducer =  (state = {
+/**
+ **  Login reducer is defined here.
+ **/
+const LoginReducer = (state = {
   isLoginSuccess: false,
   isLoginPending: false,
   loginError: null,
-  shouldRedirect : false
+  shouldRedirect: false
 }, action) => {
   switch (action.type) {
-    case  SET_LOGIN_PENDING:
+    case SET_LOGIN_PENDING:
       return Object.assign({}, state, {
         isLoginPending: action.isLoginPending,
-        shouldRedirect : false
+        shouldRedirect: false
       });
 
-    case  SET_LOGIN_SUCCESS:
+    case SET_LOGIN_SUCCESS:
       return Object.assign({}, state, {
         isLoginSuccess: action.isLoginSuccess,
-        shouldRedirect : true
+        shouldRedirect: true
       });
 
-    case  SET_LOGIN_ERROR:
+    case SET_LOGIN_ERROR:
       return Object.assign({}, state, {
         loginError: action.loginError,
-        shouldRedirect : false
+        shouldRedirect: false
       });
 
     default:
