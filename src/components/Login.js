@@ -5,7 +5,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import {login} from '../actions/LoginActions';
 import {withRouter} from 'react-router-dom';
-import '../css/Login.scss';
+import '../scss/Login.scss';
 
 /**
  **  clas definition for Login component
