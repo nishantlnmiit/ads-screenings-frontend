@@ -1,0 +1,21 @@
+@import "variables.scss";
+
+.logout {
+    width: 84px;
+    background-color: $themeColor;
+    border: aliceblue;
+    font-size: 21px;
+    height: 31px;
+    border: 3px solid;
+    border-radius: 13px;
+    border-color: $themeColor;
+ 	outline: none;
+ 	margin-top: -303px;
+	float: right;
+}
+.flexContent {
+    margin-top: 304px;
+    margin-left: 595px;
+    font-size: 50px;
+    color: $themeColor;
+}

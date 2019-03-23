@@ -5,7 +5,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import {login} from '../actions/LoginActions';
 import {withRouter} from 'react-router-dom';
-import '../css/Login.css';
+import '../css/Login.scss';
 
 /**
  **  clas definition for Login component
@@ -40,6 +40,9 @@ componentWillReceiveProps(nextProps){
   }
 
 }
+
+
+
  /**
   **  Html is written inside render method.
   **/

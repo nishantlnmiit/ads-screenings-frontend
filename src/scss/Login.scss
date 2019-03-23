@@ -1,0 +1,61 @@
+@import "variables.scss";
+
+form[name="login"] {
+  display: flex;
+  flex-direction: column;
+  width: 450px;
+  padding: 10px;
+
+}
+
+.form-group-main {
+    margin-left: 381px;
+    margin-top: 245px;
+}
+.form-group {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 10px;
+}
+
+label {
+    color: $themeColor;
+    min-width: 180px;
+    width: 180px;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+input[type="email"], input[type="password"] {
+  box-sizing: border-box;
+  height: 40px;
+  padding: 3px;
+  flex-grow: 1;
+  font-size: 25px;
+  border-color: $themeColor;
+}
+
+input[type="submit"] {
+     
+    align-self: flex-end;
+    width: 92px;
+    height: 43px;
+    border: 3px solid;
+    border-radius: 13px;
+    font-size: 20px;
+    background: white;
+    margin-left: 413px;
+    border-color: $themeColor;
+    background: $themeColor;
+    margin-top: 15px;
+    outline: none;
+}
+
+.message {
+    font-size: 25px;
+    margin-top: 10px;
+    text-align: center;
+    /* margin-left: 405px; */
+    color: $messageColor;
+    margin-right: -560px;
+}

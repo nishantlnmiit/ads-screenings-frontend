@@ -3,7 +3,7 @@
  **/
 import React, { Component } from 'react';
 import {withRouter} from 'react-router-dom';
-import '../css/Dashboard.css';
+import '../css/Dashboard.scss';
 import {removeCookie} from '../common';
 
 
